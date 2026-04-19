@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.jspecify.annotations.Nullable;
 
+import java.util.List;
+
 @Entity
 @Table(name = "usuarios")
 @Getter @Setter
@@ -25,6 +27,9 @@ public class Usuario {
     private String contraseña;
 
     private String rol; // EMPLEADO o JEFE
+
+    @OneToMany (mappedBy = "usuario")
+    private List<Venta> ventas;
 
     public Usuario(String nombre, String apellido, String correo, String contraseña, String rol) {
         this.nombre = nombre;

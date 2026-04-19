@@ -1,9 +1,9 @@
 package cocteleriaBackendWeb.backendCocteleriaWeb.reppositorio;
 
-import cocteleriaBackendWeb.backendCocteleriaWeb.entidades.Tamaños;
+import cocteleriaBackendWeb.backendCocteleriaWeb.entidades.Venta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TamanoRepository extends JpaRepository<Tamaños, Long> {
+public interface VentaRepository extends JpaRepository<Venta, Integer> {
 }

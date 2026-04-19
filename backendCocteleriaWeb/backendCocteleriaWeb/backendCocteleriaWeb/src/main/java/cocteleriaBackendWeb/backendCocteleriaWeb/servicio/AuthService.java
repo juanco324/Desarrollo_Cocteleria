@@ -34,7 +34,7 @@ public class AuthService {
     // 🔹 LOGIN
     public AuthResponse login(AuthRequest request) {
         Usuario user = usuarioRepository.findByCorreo(request.getCorreo())
-                .orElseThrow(() -> new RuntimeException("Usuario no existe")); // ✅ Buscar en MySQL
+                .orElseThrow(() -> new RuntimeException("Usuario no existe"));
 
         if (!encoder.matches(request.getContraseña(), user.getContraseña())) {
             throw new RuntimeException("Contraseña incorrecta");

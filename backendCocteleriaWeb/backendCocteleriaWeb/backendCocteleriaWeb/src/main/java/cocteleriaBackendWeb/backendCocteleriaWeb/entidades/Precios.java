@@ -1,10 +1,17 @@
 package cocteleriaBackendWeb.backendCocteleriaWeb.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "precios")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Precios {
 
     @Id
@@ -17,24 +24,8 @@ public class Precios {
 
     @ManyToOne
     @JoinColumn(name = "id_tamaño")
-    private Tamaños tamano;
+    private Tamaños tamaños;
 
     private BigDecimal precio;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Cocteles.Tipo getTipo() { return tipo; }
-    public void setTipo(Cocteles.Tipo tipo) { this.tipo = tipo; }
-
-    public Tamaños getTamano() { return tamano; }
-    public void setTamano(Tamaños tamano) { this.tamano = tamano; }
-
-    public BigDecimal getPrecio() { return precio; }
-    public void setPrecio(BigDecimal precio) { this.precio = precio; }
 }

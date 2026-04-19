@@ -1,9 +1,17 @@
 package cocteleriaBackendWeb.backendCocteleriaWeb.entidades;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cocteles")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cocteles {
 
     @Id
@@ -21,8 +29,8 @@ public class Cocteles {
         SIN_LICOR
     }
 
-    // getters y setters
-
+    @OneToMany(mappedBy = "cocteles")
+    private List<DetalleVentas> detalleVentas;
 
     public Integer getId() {
         return id;
